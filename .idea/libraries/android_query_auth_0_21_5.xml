@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="android-query-auth.0.21.5">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/workspace/Jauntelog/libs/android-query-auth.0.21.5.jar!/" />
+      <root url="jar://$USER_HOME$/workspace/Jauntelog/libs/android-query.0.25.10.jar!/" />
+      <root url="jar://$USER_HOME$/workspace/Jauntelog/libs/android-support-v4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
