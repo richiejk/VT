@@ -31,20 +31,24 @@
             android:layout_alignParentStart="true"
             android:id="@+id/linearLayout">
 
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:text="voyage tales"
+                android:textColor="#eee"
+                android:layout_marginBottom="@dimen/activity_horizontal_margin"
                 android:layout_gravity="center"
-                android:id="@+id/img_landing_logo" />
+                android:id="@+id/txt_title" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:background="#AAffffff"
-                android:hint="username"
+                android:hint="USERNAME"
                 android:padding="@dimen/margin_8dp"
+                android:singleLine="true"
                 android:layout_marginTop="@dimen/margin_8dp"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText_landing_username" />
 
@@ -52,9 +56,10 @@
                 android:layout_marginTop="@dimen/margin_8dp"
                 android:padding="@dimen/margin_8dp"
                 android:layout_width="match_parent"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:password="true"
-                android:hint="password"
+                android:singleLine="true"
+                android:hint="PASSWORD"
                 android:background="#AAffffff"
                 android:layout_height="wrap_content"
                 android:id="@+id/editText_landing_password" />
@@ -66,11 +71,11 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
-                    android:textSize="16sp"
+                    android:textSize="12sp"
                     android:layout_gravity="right"
                     android:gravity="center_vertical|right"
                     android:textColor="#ccc"
-                    android:text="forgot password?"
+                    android:text="FORGOT PASSWORD? "
                     android:id="@+id/txt_landing_forgot_pwd" />
             </LinearLayout>
 
@@ -78,10 +83,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_gravity="center_horizontal"
-                android:text="sign in"
+                android:text="SIGN IN"
                 android:background="#AF000000"
                 android:padding="@dimen/margin_8dp"
-                android:textSize="22sp"
+                android:textSize="16sp"
                 android:layout_marginBottom="@dimen/margin_8dp"
                 android:textStyle="bold"
                 android:textColor="#ccc"
@@ -98,9 +103,9 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:text="register new user"
+        android:text="REGISTER NEW USER"
         android:background="#AF000000"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="#ccc"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"

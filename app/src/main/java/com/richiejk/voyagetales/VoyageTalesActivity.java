@@ -15,20 +15,26 @@ import android.os.Build;
 import android.view.Window;
 import android.widget.TextView;
 
+import java.lang.reflect.Type;
+
 public class VoyageTalesActivity extends Activity {
     Typeface typeface;
+    Typeface titleTypeface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        typeface= Typeface.createFromAsset(getAssets(), "fonts/roboto_light.ttf");
+        typeface= Typeface.createFromAsset(getAssets(), "fonts/VarelaRound.otf");
+        titleTypeface= Typeface.createFromAsset(getAssets(),"fonts/sandbox.ttf");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         this.setCustomFont((ViewGroup)findViewById(android.R.id.content));
+        ((TextView)findViewById(R.id.txt_title)).setTypeface(titleTypeface);
+
     }
 
     /**
