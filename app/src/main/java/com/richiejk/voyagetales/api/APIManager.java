@@ -68,7 +68,7 @@ public class APIManager {
     public static String convertStreamToString(InputStream is) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         StringBuilder sb = new StringBuilder();
-        String line = null;
+        String line = null; //dfsd
 
         while ((line = reader.readLine()) != null) {
             sb.append(line);
