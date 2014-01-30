@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
- <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.richiejk.voyagetales"
-        android:versionCode="1"
-        android:versionName="1.0" >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.richiejk.voyagetales"
+    android:versionCode="1"
+    android:versionName="1.0" >
 
-        <uses-sdk
-            android:minSdkVersion="15"
-            android:targetSdkVersion="17" />
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="17" />
+
     <application
+        android:name="com.richiejk.voyagetales.VoyageTalesApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:name=".VoyageTalesApplication"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.richiejk.voyagetales.LandingActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.richiejk.voyagetales.VoyageTalesActivity"
             android:label="@string/title_activity_voyage_tales" >
+        </activity>
+        <activity
+            android:name="com.richiejk.voyagetales.DashBoardActivity"
+            android:label="@string/title_activity_dash_board" >
         </activity>
     </application>
 

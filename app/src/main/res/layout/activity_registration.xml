@@ -36,6 +36,8 @@
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
+
                 <ImageView
                     android:layout_gravity="center"
                     android:layout_width="wrap_content"
@@ -54,17 +56,26 @@
 
                 </LinearLayout>
 
+            <TextView
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:textColor="#eee"
+                android:textSize="12sp"
+                android:text="SIGN UP NOW. THIS WILL ONLY TAKE A MINUTE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
 
             <EditText
                 android:layout_width="match_parent"
                 android:background="#AAffffff"
-                android:hint="USERNAME"
+                android:hint="EMAIL ID"
                 android:padding="@dimen/margin_8dp"
                 android:singleLine="true"
                 android:layout_marginTop="@dimen/margin_8dp"
                 android:textSize="14sp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText_landing_username" />
+                android:id="@+id/editText_reg_username" />
 
             <EditText
                 android:layout_marginTop="@dimen/margin_8dp"
@@ -76,36 +87,22 @@
                 android:hint="PASSWORD"
                 android:background="#AAffffff"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText_landing_password" />
+                android:id="@+id/editText_reg_password" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:textSize="12sp"
-                    android:layout_gravity="right"
-                    android:gravity="center_vertical|right"
-                    android:textColor="#ccc"
-                    android:text="FORGOT PASSWORD? "
-                    android:id="@+id/txt_landing_forgot_pwd" />
-            </LinearLayout>
 
             <Button
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:onClick="login_now"
                 android:layout_gravity="center_horizontal"
-                android:text="SIGN IN"
+                android:text="SIGN UP"
                 android:background="#AF000000"
                 android:padding="@dimen/margin_8dp"
                 android:textSize="16sp"
                 android:layout_marginBottom="@dimen/margin_8dp"
                 android:textStyle="bold"
                 android:textColor="#ccc"
-                android:id="@+id/btn_landing_sign_in" />
+                android:id="@+id/btn_reg_sign_in" />
 
         </LinearLayout>
 
@@ -118,11 +115,11 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
-        android:text="REGISTER NEW USER"
+        android:text="ALREADY REGISTERED? SIGN IN"
         android:background="#AF000000"
         android:textSize="14sp"
         android:textColor="#ccc"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/btn_landing_register" />
+        android:id="@+id/btn_reg_register" />
 </RelativeLayout>
