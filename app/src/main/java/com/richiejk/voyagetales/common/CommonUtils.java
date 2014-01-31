@@ -17,6 +17,7 @@ public class CommonUtils {
         SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.putInt(Finals.SHARED_PREFS_IS_LOGGED_IN_CHECK,value);
+        editor.commit();
     }
 
     public static int checkIfCurrentlyOnTrip(Context context){
@@ -28,12 +29,14 @@ public class CommonUtils {
         SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.putInt(Finals.SHARED_PREFS_CURRENTLY_ON_TRIP_CHECK,Finals.SHARED_PREFS_CURRENTLY_ON_TRIP_TRUE);
+        editor.commit();
     }
 
     public static void removeCurrentlyOnTrip(Context context){
         SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.putInt(Finals.SHARED_PREFS_CURRENTLY_ON_TRIP_CHECK,Finals.SHARED_PREFS_CURRENTLY_ON_TRIP_FALSE);
+        editor.commit();
     }
 
     public static int getCurrentUserId(Context context){
@@ -45,6 +48,7 @@ public class CommonUtils {
         SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.putInt(Finals.SHARED_PREFS_CURRENT_USER_ID,id);
+        editor.commit();
     }
 
 

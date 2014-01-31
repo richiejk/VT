@@ -1,0 +1,231 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.richiejk.voyagetales.ProfileActivity"
+>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/blue_winter"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageView"
+        />
+
+    <LinearLayout
+        android:background="@color/icon_gray"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:id="@+id/ll_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_height="40dp"
+                android:background="@drawable/vt_logo_wh"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="#eee"
+                android:layout_height="match_parent"
+                android:text="VOYAGE TALES"
+                />
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="#eee"
+                android:layout_height="match_parent"
+                android:text="()"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            >
+            <ImageView
+                android:id="@+id/img_settings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/settings_new"
+                />
+
+            <ImageView
+                android:id="@+id/img_logout"
+                android:layout_width="35dp"
+                android:layout_marginRight="@dimen/margin_8dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/logout"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:background="@drawable/blur_box"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@color/icon_gray"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/img_profile_pic" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/text_light_gray"
+                android:text="name"
+                android:textSize="22sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_profile_user_name" />
+            <TextView
+                android:gravity="center_horizontal"
+                android:textColor="@color/text_light_gray"
+                android:text="email"
+                android:textSize="14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_profile_email_id" />
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/text_light_gray"
+                    android:text="%d trips"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_profile_trip_count" />
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/text_light_gray"
+                    android:text="%d friends"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_profile_friends_count" />
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/text_light_gray"
+                    android:text="%d fans"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txt_profile_fans_count" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:text="lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum"
+                android:textSize="12sp"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textColor="@color/text_light_gray"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txt_profile_about_me" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+        <LinearLayout
+            android:gravity="bottom"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           >
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:onClick="login_now"
+                android:layout_gravity="center_horizontal"
+                android:text="CHANGE PASSWORD"
+                android:background="#AF000000"
+                android:padding="@dimen/margin_8dp"
+                android:textSize="16sp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:textStyle="bold"
+                android:textColor="#ccc"
+                android:id="@+id/btn_profile_edit_profile" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:onClick="login_now"
+                android:layout_gravity="center_horizontal"
+                android:text="EDIT PROFILE"
+                android:background="#AF000000"
+                android:padding="@dimen/margin_8dp"
+                android:textSize="16sp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:textStyle="bold"
+                android:textColor="#ccc"
+                android:id="@+id/btn_profile_edit_profile" />
+        </LinearLayout>
+    </LinearLayout>
+    </RelativeLayout>

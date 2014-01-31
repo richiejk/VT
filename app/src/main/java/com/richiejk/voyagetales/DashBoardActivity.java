@@ -12,9 +12,12 @@ import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.richiejk.voyagetales.common.CommonUtils;
 import com.richiejk.voyagetales.common.Finals;
+
+import org.w3c.dom.Text;
 
 public class DashBoardActivity extends VoyageTalesActivity {
 
@@ -23,6 +26,7 @@ public class DashBoardActivity extends VoyageTalesActivity {
     class UISet{
         LinearLayout me,friends,trips,messages,startTrip,onTripLayout,home;
         ImageView logout,settings,audio,cam,note,stopTrip;
+        TextView name;
     }
 
     VoyageTalesApplication application;
@@ -49,6 +53,7 @@ public class DashBoardActivity extends VoyageTalesActivity {
             ui.startTrip.setVisibility(View.GONE);
             ui.onTripLayout.setVisibility(View.VISIBLE);
         }
+        ui.name.setText("("+application.getCurrent_user().getUser_name()+")");
     }
 
     void initUI(){
@@ -59,6 +64,7 @@ public class DashBoardActivity extends VoyageTalesActivity {
         ui.startTrip=(LinearLayout)findViewById(R.id.ll_dashboard_start_trip);
         ui.onTripLayout=(LinearLayout)findViewById(R.id.ll_dashboard_while_in_trip);
         ui.home=(LinearLayout)findViewById(R.id.ll_dashboard_home);
+        ui.name=(TextView)findViewById(R.id.txt_dashboard_name);
 
         ui.logout=(ImageView)findViewById(R.id.img_dashboard_logout);
         ui.settings=(ImageView)findViewById(R.id.img_dashboard_settings);
@@ -72,7 +78,8 @@ public class DashBoardActivity extends VoyageTalesActivity {
         ui.me.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent(DashBoardActivity.this,ProfileActivity.class);
+                startActivity(intent);
             }
         });
 
