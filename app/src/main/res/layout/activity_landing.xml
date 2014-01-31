@@ -58,7 +58,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:background="#AAffffff"
-                android:hint="USERNAME"
+                android:hint="EMAIL ID"
                 android:padding="@dimen/margin_8dp"
                 android:singleLine="true"
                 android:layout_marginTop="@dimen/margin_8dp"
@@ -82,15 +82,40 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <TextView
+
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="45dp"
-                    android:textSize="12sp"
-                    android:layout_gravity="right"
-                    android:gravity="center_vertical|right"
-                    android:textColor="#ccc"
-                    android:text="FORGOT PASSWORD? "
-                    android:id="@+id/txt_landing_forgot_pwd" />
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <CheckBox
+                        android:textColor="#eee"
+                        android:paddingLeft="8dp"
+                        android:textSize="12sp"
+                        android:button="@drawable/checkbox_remember_selector"
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:text="REMEMBER ME"
+                        android:id="@+id/checkBox_landing_remember_me" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:textSize="12sp"
+                        android:layout_gravity="right"
+                        android:gravity="center_vertical|right"
+                        android:textColor="#ccc"
+                        android:text="FORGOT PASSWORD? "
+                        android:id="@+id/txt_landing_forgot_pwd" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <Button

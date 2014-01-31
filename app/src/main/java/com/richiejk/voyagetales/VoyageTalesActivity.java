@@ -13,10 +13,14 @@ import android.os.Build;
 import android.view.Window;
 import android.widget.TextView;
 
+import com.richiejk.voyagetales.models.UserModel;
+
 import java.lang.reflect.Type;
 
 public class VoyageTalesActivity extends Activity {
     Typeface typeface;
+    VoyageTalesApplication application;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,7 @@ public class VoyageTalesActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        application=(VoyageTalesApplication)getApplication();
         this.setCustomFont((ViewGroup)findViewById(android.R.id.content));
 
     }
@@ -63,5 +68,9 @@ public class VoyageTalesActivity extends Activity {
 
         } // --for
 
+    }
+
+    protected void processLogout(){
+        application.setCurrent_user(new UserModel());
     }
 }
