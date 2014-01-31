@@ -45,9 +45,10 @@ public class LandingActivity extends VoyageTalesActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         application=(VoyageTalesApplication)getApplication();
-        Log.i("LOG STATUS_CODE",CommonUtils.checkIfLoginIsSaved(this)+"");
-        if(CommonUtils.checkIfLoginIsSaved(this)==Finals.SHARED_PREFS_IS_LOGGED_IN_TRUE){
-            Log.i("LOG STATUS","TRUE");
+        Log.i("LOG_STATUS_CODE",CommonUtils.checkIfLoginIsSaved(this)+"");
+        int status=CommonUtils.checkIfLoginIsSaved(this);
+        if(status==Finals.SHARED_PREFS_IS_LOGGED_IN_TRUE){
+            Log.i("LOG_STATUS","TRUE");
             DBHandler dbHandler=new DBHandler(this);
             UserModel currentUser=dbHandler.getUser(CommonUtils.getCurrentUserId(this));
             currentUser.setFriends(new ArrayList<UserModel>());
@@ -120,7 +121,7 @@ public class LandingActivity extends VoyageTalesActivity {
         //todo login logic
         if(ui.rememberMe.isChecked()){
             CommonUtils.changeLoginSavedStatus(this, Finals.SHARED_PREFS_IS_LOGGED_IN_TRUE);
-            Log.i("LOG STATUS_CODE_INITIATOR","START");
+            Log.i("LOG_STATUS_CODE_INITIATOR","START");
         }
         ui.progressDialog.hide();
 

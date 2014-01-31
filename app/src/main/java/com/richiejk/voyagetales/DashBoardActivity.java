@@ -115,6 +115,7 @@ public class DashBoardActivity extends VoyageTalesActivity {
             @Override
             public void onClick(View view) {
                 processLogout();
+                CommonUtils.changeLoginSavedStatus(DashBoardActivity.this,Finals.SHARED_PREFS_IS_LOGGED_IN_FALSE);
                 Intent intent=new Intent(DashBoardActivity.this,LandingActivity.class);
                 startActivity(intent);
                 finish();
