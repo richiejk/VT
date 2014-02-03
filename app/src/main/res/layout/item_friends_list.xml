@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@drawable/blur_box"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-10dp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/vt_logo_wh"
+            android:id="@+id/img_item_friends_list_pic"
+            android:layout_gravity="center_vertical"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+        <TextView
+            android:id="@+id/txt_item_friends_list_name"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:textSize="22sp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textColor="@color/text_light_gray"
+            android:text="Richie Jose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+</LinearLayout>
