@@ -131,7 +131,11 @@
                 android:textStyle="bold"
                 android:textColor="#ccc"
                 android:id="@+id/btn_landing_sign_in" />
-
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/temp_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
 

@@ -4,6 +4,7 @@ import android.app.Application;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.nsd.NsdManager;
+import android.os.AsyncTask;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,10 +17,13 @@ import android.os.Build;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.androidquery.AQuery;
 import com.richiejk.voyagetales.common.CommonUtils;
 import com.richiejk.voyagetales.common.Finals;
+import com.richiejk.voyagetales.common.ImageManager;
 import com.richiejk.voyagetales.data.DBHandler;
 import com.richiejk.voyagetales.models.UserModel;
 
@@ -34,6 +38,7 @@ public class LandingActivity extends VoyageTalesActivity {
         EditText username,password;
         TextView forgotPassword;
         Button login,register;
+        ImageView temp_me;
         CheckBox rememberMe;
         ProgressDialog progressDialog;
     }
@@ -91,6 +96,8 @@ public class LandingActivity extends VoyageTalesActivity {
         ui.register=(Button)findViewById(R.id.btn_landing_register);
         ui.rememberMe=(CheckBox)findViewById(R.id.checkBox_landing_remember_me);
 
+        ui.temp_me=(ImageView)findViewById(R.id.temp_me);
+
         ui.progressDialog=new ProgressDialog(this);
         ui.progressDialog.setCancelable(false);
         ui.progressDialog.setTitle("Signing in");
@@ -123,18 +130,42 @@ public class LandingActivity extends VoyageTalesActivity {
             CommonUtils.changeLoginSavedStatus(this, Finals.SHARED_PREFS_IS_LOGGED_IN_TRUE);
             Log.i("LOG_STATUS_CODE_INITIATOR","START");
         }
+
+
+
+
         ui.progressDialog.hide();
 
         int user_id=1;
         CommonUtils.setCurrentUserId(this,user_id);
-        UserModel currentUser=new UserModel(user_id, "richie","richie@richie.in","http://www.iconarchive.com/show/windows-8-metro-icons-by-dakirby309/Office-Apps-OpenOffice-Metro-icon.html", 0,0, 0, 0, 0);
+        UserModel currentUser=new UserModel(user_id, "richie","richie@richie.in","http://www.unmatchedstyle.com/wp-content/uploads/2010/11/user.jpg", 0,0, 0, 0, 0);
+
+
+
         currentUser.setFriends(new ArrayList<UserModel>());
         application.setCurrent_user(currentUser);
         DBHandler dbHandler=new DBHandler(this);
         dbHandler.insertUser(currentUser);
 
+        boolean memCache = true;
+        boolean fileCache = true;
+        AQuery aq=new AQuery(this);
+        aq.id(R.id.temp_me).image(currentUser.getProfile_picture(), memCache, fileCache);
+
         Intent intent=new Intent(this,DashBoardActivity.class);
         startActivity(intent);
         finish();
     }
+
+    void downloadImage(){
+        new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                ImageManager.DownloadFromUrl(application.getCurrent_user().getProfile_picture(),"me.jpg");
+                return null;
+            }
+        }.execute(null);
+    }
+
+
    }

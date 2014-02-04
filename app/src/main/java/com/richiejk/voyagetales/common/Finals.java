@@ -19,4 +19,6 @@ public class Finals {
 
     public static String SHARED_PREFS_CURRENT_USER_ID="uId";
 
+    public static String URL_IMG_PATH_ME = "/data/data/com.richiejk.voyagetales/me.jpg";
+
 }
