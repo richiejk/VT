@@ -86,7 +86,8 @@ public class DashBoardActivity extends VoyageTalesActivity {
         ui.friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent=new Intent(DashBoardActivity.this,FriendsActivity.class);
+                startActivity(intent);
             }
         });
 
