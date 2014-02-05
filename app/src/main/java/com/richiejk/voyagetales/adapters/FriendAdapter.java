@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.androidquery.AQuery;
+import com.androidquery.callback.ImageOptions;
 import com.richiejk.voyagetales.R;
 import com.richiejk.voyagetales.models.FriendModel;
 import com.richiejk.voyagetales.models.UserModel;
@@ -50,8 +51,12 @@ public class FriendAdapter extends ArrayAdapter<FriendModel> {
         ImageView pic=(ImageView)row.findViewById(R.id.img_item_friends_list_pic);
         AQuery aQuery=new AQuery(context);
         boolean memCache = true;
+
+        ImageOptions options = new ImageOptions();
+
+        options.fileCache=true;
         boolean fileCache = true;
-        aQuery.id(pic).image(currentObject.getProfile_picture(), memCache, fileCache);
+        aQuery.id(pic).image(currentObject.getProfile_picture(),options);
 
         return row;
     }

@@ -104,7 +104,7 @@
         >
 
         <ImageView
-
+            android:scaleType="centerCrop"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:background="@color/icon_gray"
             android:layout_width="150dp"
@@ -202,7 +202,6 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:onClick="login_now"
                 android:layout_gravity="center_horizontal"
                 android:text="CHANGE PASSWORD"
                 android:background="#AF000000"
@@ -216,7 +215,6 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:onClick="login_now"
                 android:layout_gravity="center_horizontal"
                 android:text="EDIT PROFILE"
                 android:background="#AF000000"
