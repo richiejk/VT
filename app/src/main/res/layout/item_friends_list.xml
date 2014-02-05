@@ -6,11 +6,11 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:background="@drawable/blur_box_lighter"
+        android:background="@color/normal_transparent_black_button_bg"
         android:layout_width="match_parent"
         android:layout_marginLeft="-10dp"
-        android:layout_marginRight="-10dp"
         android:padding="8dp"
+        android:layout_marginRight="-10dp"
         android:layout_height="wrap_content">
 
 
@@ -26,7 +26,7 @@
             android:id="@+id/txt_item_friends_list_name"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
-            android:textSize="22sp"
+            android:textSize="14sp"
             android:singleLine="true"
             android:ellipsize="marquee"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"

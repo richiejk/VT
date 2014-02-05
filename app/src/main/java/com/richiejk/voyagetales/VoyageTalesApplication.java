@@ -1,6 +1,7 @@
 package com.richiejk.voyagetales;
 
 import android.app.Application;
+import android.graphics.Typeface;
 
 import com.richiejk.voyagetales.common.Finals;
 import com.richiejk.voyagetales.models.UserModel;
@@ -30,5 +31,17 @@ public class VoyageTalesApplication extends Application {
 
     public void setIS_ON_TRIP(int IS_ON_TRIP) {
         this.IS_ON_TRIP = IS_ON_TRIP;
+    }
+
+    Typeface typeface;
+
+    public Typeface getTypeface() {
+        if(typeface==null){
+            typeface= Typeface.createFromAsset(getAssets(), "fonts/VarelaRound.otf");
+            return typeface;
+        }else{
+            return typeface;
+        }
+
     }
 }

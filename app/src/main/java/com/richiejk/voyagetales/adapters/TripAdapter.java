@@ -14,25 +14,22 @@ import com.androidquery.callback.ImageOptions;
 import com.richiejk.voyagetales.R;
 import com.richiejk.voyagetales.VoyageTalesApplication;
 import com.richiejk.voyagetales.models.FriendModel;
-import com.richiejk.voyagetales.models.UserModel;
-
-import org.w3c.dom.Text;
+import com.richiejk.voyagetales.models.TripModel;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by richie on 2/3/14.
  */
-public class FriendAdapter extends ArrayAdapter<FriendModel> {
+public class TripAdapter extends ArrayAdapter<TripModel> {
 
     Context context;
-    ArrayList<FriendModel> friends;
+    ArrayList<TripModel> trips;
     int textViewId;
 
-    public FriendAdapter(Context context, int textViewResourceId, ArrayList<FriendModel> objects) {
+    public TripAdapter(Context context, int textViewResourceId, ArrayList<TripModel> objects) {
         super(context, textViewResourceId, objects);
-        this.friends=objects;
+        this.trips=objects;
         this.context=context;
         this.textViewId=textViewResourceId;
     }
@@ -41,17 +38,17 @@ public class FriendAdapter extends ArrayAdapter<FriendModel> {
     public View getView(int position, View convertView, ViewGroup parent) {
         VoyageTalesApplication application=(VoyageTalesApplication)((Activity)context).getApplication();
         View row=convertView;
-        FriendModel currentObject= friends.get(position);
+        TripModel currentObject= trips.get(position);
 
         if(row==null){
             LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row=inflater.inflate(R.layout.item_friends_list,parent,false);
+            row=inflater.inflate(R.layout.item_trips_list,parent,false);
         }
 
-        TextView name=(TextView)row.findViewById(R.id.txt_item_friends_list_name);
-        name.setText(currentObject.getUser_name().toUpperCase());
+        TextView name=(TextView)row.findViewById(R.id.txt_item_trips_list_name);
+        name.setText(currentObject.getTrip_name());
         name.setTypeface(application.getTypeface());
-        ImageView pic=(ImageView)row.findViewById(R.id.img_item_friends_list_pic);
+        ImageView pic=(ImageView)row.findViewById(R.id.img_trips_list_item_bg);
         AQuery aQuery=new AQuery(context);
         boolean memCache = true;
 
@@ -59,13 +56,13 @@ public class FriendAdapter extends ArrayAdapter<FriendModel> {
 
         options.fileCache=true;
         boolean fileCache = true;
-        aQuery.id(pic).image(currentObject.getProfile_picture(),options);
+        aQuery.id(pic).image(currentObject.getTrip_cover_picture(),options);
 
         return row;
     }
 
     @Override
     public int getCount() {
-        return friends.size();
+        return trips.size();
     }
 }
