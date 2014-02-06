@@ -2,6 +2,7 @@
 <resources>
 <color name="icon_gray">#373737</color>
 <color name="text_light_gray">#eee</color>
+<color name="text_lighter_gray">#aaa</color>
 <color name="darker_transparent_black_button_bg">#EF000000</color>
 <color name="normal_transparent_black_button_bg">#AF000000</color>
 </resources>

@@ -2,6 +2,7 @@ package com.richiejk.voyagetales;
 
 import android.content.Intent;
 import android.opengl.Visibility;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -22,10 +23,10 @@ import org.w3c.dom.Text;
 public class DashBoardActivity extends VoyageTalesActivity {
 
     boolean isOnTrip;
-
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     class UISet{
-        LinearLayout me,friends,trips,messages,startTrip,onTripLayout,home;
-        ImageView logout,settings,audio,cam,note,stopTrip;
+        LinearLayout me,friends,trips,messages,startTrip,home,upper_menu,lower_menu;
+        ImageView logout,settings;
         TextView name;
     }
 
@@ -51,7 +52,6 @@ public class DashBoardActivity extends VoyageTalesActivity {
         if(isOnTrip){
             application.IS_ON_TRIP=Finals.SHARED_PREFS_CURRENTLY_ON_TRIP_TRUE;
             ui.startTrip.setVisibility(View.GONE);
-            ui.onTripLayout.setVisibility(View.VISIBLE);
         }
         ui.name.setText("("+application.getCurrent_user().getUser_name()+")");
     }
@@ -62,16 +62,14 @@ public class DashBoardActivity extends VoyageTalesActivity {
         ui.trips=(LinearLayout)findViewById(R.id.ll_dashboard_trips);
         ui.messages=(LinearLayout)findViewById(R.id.ll_dashboard_messages);
         ui.startTrip=(LinearLayout)findViewById(R.id.ll_dashboard_start_trip);
-        ui.onTripLayout=(LinearLayout)findViewById(R.id.ll_dashboard_while_in_trip);
         ui.home=(LinearLayout)findViewById(R.id.ll_dashboard_home);
         ui.name=(TextView)findViewById(R.id.txt_dashboard_name);
 
         ui.logout=(ImageView)findViewById(R.id.img_dashboard_logout);
         ui.settings=(ImageView)findViewById(R.id.img_dashboard_settings);
-        ui.audio=(ImageView)findViewById(R.id.img_dashboard_audio);
-        ui.cam=(ImageView)findViewById(R.id.img_dashboard_cam);
-        ui.note=(ImageView)findViewById(R.id.img_dashboard_note);
-        ui.stopTrip=(ImageView)findViewById(R.id.img_dashboard_stop_trip);
+
+        ui.upper_menu=(LinearLayout)findViewById(R.id.ll_dashboard_upper_menu);
+        ui.lower_menu=(LinearLayout)findViewById(R.id.ll_dashboard_lower_menu);
     }
 
     void setListeners(){
@@ -109,7 +107,6 @@ public class DashBoardActivity extends VoyageTalesActivity {
         ui.startTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
             }
         });
 
@@ -131,19 +128,6 @@ public class DashBoardActivity extends VoyageTalesActivity {
             }
         });
 
-        ui.audio.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        ui.note.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
 
         ui.settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,18 +136,5 @@ public class DashBoardActivity extends VoyageTalesActivity {
             }
         });
 
-        ui.cam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        ui.stopTrip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
     }
 }

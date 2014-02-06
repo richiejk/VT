@@ -87,6 +87,7 @@
         android:layout_below="@+id/linearLayout">
 
         <LinearLayout
+            android:id="@+id/ll_dashboard_upper_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
@@ -111,8 +112,9 @@
                     android:background="@drawable/me_new"
                     />
                 <TextView
+                    android:textColor="@color/icon_gray"
                     android:textSize="20sp"
-                    android:gravity="center"
+                    android:gravity="center|top"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -136,6 +138,7 @@
                     android:background="@drawable/friends_new"
                     />
                 <TextView
+                    android:textColor="@color/icon_gray"
                     android:textSize="20sp"
                     android:gravity="center"
                     android:layout_gravity="center"
@@ -156,54 +159,6 @@
         android:gravity="center"
         android:layout_weight="1">
 
-            <LinearLayout
-                android:id="@+id/ll_dashboard_while_in_trip"
-                android:layout_width="match_parent"
-                android:layout_gravity="center"
-                android:visibility="gone"
-                android:gravity="center"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/img_dashboard_cam"
-                    android:layout_marginLeft="@dimen/margin_8dp"
-                    android:layout_marginRight="@dimen/margin_8dp"
-                    android:layout_width="70dp"
-                    android:src="@drawable/cam_trip"
-                    android:layout_gravity="center"
-                    android:layout_height="70dp"/>
-
-                <ImageView
-                    android:id="@+id/img_dashboard_note"
-                    android:layout_marginLeft="@dimen/margin_8dp"
-                    android:layout_marginRight="@dimen/margin_8dp"
-                    android:layout_width="70dp"
-                    android:src="@drawable/note_trip"
-                    android:layout_gravity="center"
-                    android:layout_height="70dp"/>
-
-                <ImageView
-                    android:id="@+id/img_dashboard_audio"
-                    android:layout_marginLeft="@dimen/margin_8dp"
-                    android:layout_marginRight="@dimen/margin_8dp"
-                    android:layout_width="70dp"
-                    android:src="@drawable/audio_trip"
-                    android:layout_gravity="center"
-                    android:layout_height="70dp"/>
-
-
-
-                <ImageView
-                    android:id="@+id/img_dashboard_stop_trip"
-                    android:layout_marginLeft="@dimen/margin_8dp"
-                    android:layout_marginRight="@dimen/margin_8dp"
-                    android:layout_width="70dp"
-                    android:src="@drawable/shutdown_trip"
-                    android:layout_gravity="center"
-                    android:layout_height="70dp"/>
-
-
-                </LinearLayout>
 
 
 
@@ -211,6 +166,7 @@
                 android:layout_width="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
+                android:visibility="visible"
                 android:id="@+id/ll_dashboard_start_trip"
                 android:layout_height="wrap_content">
 
@@ -242,6 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:id="@+id/ll_dashboard_lower_menu"
             android:layout_weight="1"
             >
 
@@ -264,6 +221,7 @@
                 <TextView
                     android:textSize="20sp"
                     android:gravity="center"
+                    android:textColor="@color/icon_gray"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -287,6 +245,7 @@
                     />
                 <TextView
                     android:textSize="20sp"
+                    android:textColor="@color/icon_gray"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"

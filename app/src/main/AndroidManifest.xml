@@ -12,6 +12,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
         android:name="com.richiejk.voyagetales.VoyageTalesApplication"
@@ -51,6 +56,10 @@
         <activity
             android:name="com.richiejk.voyagetales.TripActivity"
             android:label="@string/title_activity_trip" >
+        </activity>
+        <activity
+            android:name="com.richiejk.voyagetales.TripDashboardActivity"
+            android:label="@string/title_activity_trip_dashboard" >
         </activity>
     </application>
 
