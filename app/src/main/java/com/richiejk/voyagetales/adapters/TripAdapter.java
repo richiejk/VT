@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.androidquery.AQuery;
@@ -46,16 +47,25 @@ public class TripAdapter extends ArrayAdapter<TripModel> {
         }
 
         TextView name=(TextView)row.findViewById(R.id.txt_item_trips_list_name);
+        TextView desc=(TextView)row.findViewById(R.id.txt_item_trips_list_desc);
+        TextView fans=(TextView)row.findViewById(R.id.txt_item_trips_list_fans);
         name.setText(currentObject.getTrip_name());
         name.setTypeface(application.getTypeface());
+        desc.setText(currentObject.getTrip_description());
+        desc.setTypeface(application.getTypeface());
+
+        fans.setText(currentObject.getFans_count()+" fans");
+        fans.setTypeface(application.getTypeface());
+
+        RatingBar ratingBar=(RatingBar)row.findViewById(R.id.ratingBar_trip_item);
+        ratingBar.setRating(currentObject.getRating());
+
         ImageView pic=(ImageView)row.findViewById(R.id.img_trips_list_item_bg);
         AQuery aQuery=new AQuery(context);
-        boolean memCache = true;
 
         ImageOptions options = new ImageOptions();
-
         options.fileCache=true;
-        boolean fileCache = true;
+        options.targetWidth=300;
         aQuery.id(pic).image(currentObject.getTrip_cover_picture(),options);
 
         return row;

@@ -14,10 +14,28 @@ public class TripModel {
     String trip_start_date;
     String trip_end_date;
     int fans_count;
-    String rating;
+    int collaborators_count;
+    int rating;
     ArrayList<FriendModel> collaborators;
     boolean isDownloaded;
     String trip_cover_picture;
+    boolean isPublished;
+
+    public boolean isPublished() {
+        return isPublished;
+    }
+
+    public void setPublished(boolean isPublished) {
+        this.isPublished = isPublished;
+    }
+
+    public int getCollaborators_count() {
+        return collaborators_count;
+    }
+
+    public void setCollaborators_count(int collaborators_count) {
+        this.collaborators_count = collaborators_count;
+    }
 
     public String getTrip_cover_picture() {
         return trip_cover_picture;
@@ -83,11 +101,11 @@ public class TripModel {
         this.fans_count = fans_count;
     }
 
-    public String getRating() {
+    public int getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
@@ -107,7 +125,7 @@ public class TripModel {
         this.isDownloaded = isDownloaded;
     }
 
-    public TripModel(String trip_name, int trip_id, String trip_description, int trip_status, String trip_start_date, String trip_end_date, int fans_count, String rating, ArrayList<FriendModel> collaborators, boolean isDownloaded, String trip_cover_picture) {
+    public TripModel(String trip_name, int trip_id, String trip_description, int trip_status, String trip_start_date, String trip_end_date, int fans_count, int rating, ArrayList<FriendModel> collaborators, boolean isDownloaded, String trip_cover_picture,int collaborators_count,boolean isPublished) {
         this.trip_name = trip_name;
         this.trip_id = trip_id;
         this.trip_description = trip_description;
@@ -119,5 +137,7 @@ public class TripModel {
         this.collaborators = collaborators;
         this.isDownloaded = isDownloaded;
         this.trip_cover_picture = trip_cover_picture;
+        this.collaborators_count=collaborators_count;
+        this.isPublished=isPublished;
     }
 }

@@ -21,4 +21,8 @@ public class Finals {
 
     public static String URL_IMG_PATH_ME = "/data/data/com.richiejk.voyagetales/me.jpg";
 
+    public static int LEAF_AUDIO=0;
+    public static int LEAF_PHOTO=1;
+    public static int LEAF_NOTE=2;
+
 }
