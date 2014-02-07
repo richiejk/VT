@@ -4,6 +4,7 @@ import android.app.Application;
 import android.graphics.Typeface;
 
 import com.richiejk.voyagetales.common.Finals;
+import com.richiejk.voyagetales.models.BlockModel;
 import com.richiejk.voyagetales.models.UserModel;
 
 /**
@@ -15,11 +16,15 @@ public class VoyageTalesApplication extends Application {
     public int TRIP_CURRENT_TYPE;
     int travel_type_id;
     int trip_id;
+    BlockModel currentBlock;
 
-    String location_name;
-    String location_desc;
-    String travel_from;
-    String travel_to;
+    public BlockModel getCurrentBlock() {
+        return currentBlock;
+    }
+
+    public void setCurrentBlock(BlockModel currentBlock) {
+        this.currentBlock = currentBlock;
+    }
 
     public int getTrip_id() {
         return trip_id;
@@ -27,38 +32,6 @@ public class VoyageTalesApplication extends Application {
 
     public void setTrip_id(int trip_id) {
         this.trip_id = trip_id;
-    }
-
-    public String getLocation_name() {
-        return location_name;
-    }
-
-    public void setLocation_name(String location_name) {
-        this.location_name = location_name;
-    }
-
-    public String getLocation_desc() {
-        return location_desc;
-    }
-
-    public void setLocation_desc(String location_desc) {
-        this.location_desc = location_desc;
-    }
-
-    public String getTravel_from() {
-        return travel_from;
-    }
-
-    public void setTravel_from(String travel_from) {
-        this.travel_from = travel_from;
-    }
-
-    public String getTravel_to() {
-        return travel_to;
-    }
-
-    public void setTravel_to(String travel_to) {
-        this.travel_to = travel_to;
     }
 
     public int getTravel_type_id() {

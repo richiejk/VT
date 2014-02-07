@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import com.richiejk.voyagetales.common.Finals;
+import com.richiejk.voyagetales.models.BlockModel;
 import com.richiejk.voyagetales.models.TripModel;
 import com.richiejk.voyagetales.models.UserModel;
 
@@ -57,13 +58,15 @@ public class DBHandler {
         static String COLLABORATORS_ID="collaborators_id";
         static String COVER_PIC="cover_pic";
         static String SYNC_STATUS="sync_status";
+        static String START_DATE="start_date";
     }
 
     static String TABLE_BLOCKS="tbl_blocks";
     static class TBL_BLOCKS{
         static String _ID="id";
+        static String BLOCK_TITLE="block_title";
         static String BLOCK_ID="block_id";
-        static String LOCATION_NAME="trip_name";
+        static String LOCATION_NAME="location_name";
         static String LOCATION_DESC="location_desc" ;
         static String TRAVEL_FROM="travel_from";
         static String TRAVEL_TO="travel_to" ;
@@ -79,8 +82,102 @@ public class DBHandler {
 
 
     public void insertTrip(TripModel trip){
+        ContentValues cv=new ContentValues();
+        cv.put(TBL_TRIPS.COLLABORATORS_COUNT,trip.getCollaborators_count());
+        cv.put(TBL_TRIPS.TRIP_KEY,trip.getTrip_key());
+        cv.put(TBL_TRIPS.COVER_PIC,trip.getTrip_cover_picture());
+        cv.put(TBL_TRIPS.FANS_COUNT,trip.getFans_count());
+        cv.put(TBL_TRIPS.STATUS,trip.getTrip_status());
+        cv.put(TBL_TRIPS.SYNC_STATUS,trip.getSync_status());
+        cv.put(TBL_TRIPS.TRAVEL_FROM,trip.getTrip_starting_from());
+        cv.put(TBL_TRIPS.TRAVEL_TO,trip.getTrip_ending_at());
+        cv.put(TBL_TRIPS.TRIP_DESC,trip.getTrip_description());
+        cv.put(TBL_TRIPS.TRIP_ID,trip.getTrip_id());
+        cv.put(TBL_TRIPS.TRIP_NAME,trip.getTrip_name());
+        cv.put(TBL_TRIPS.COLLABORATORS_ID,trip.getCollaborators_ids());
 
+        long rowId;
+
+            rowId = db.insert(TABLE_TRIPS, null, cv);
     }
+
+    public void insertBlock(BlockModel block,String tripKey){
+        ContentValues cv=new ContentValues();
+        cv.put(TBL_BLOCKS.TRIP_KEY,tripKey);
+        cv.put(TBL_BLOCKS.BLOCK_ID,block.getBlockId());
+        cv.put(TBL_BLOCKS.BLOCK_TYPE,block.getBlockType());
+        cv.put(TBL_BLOCKS.DATE_TIME_ENTRY,block.getBlockStartDateTime());
+        cv.put(TBL_BLOCKS.DATE_TIME_EXIT,block.getBlockEndDateTime());
+        cv.put(TBL_BLOCKS.LATITUDE,block.getBlockLatitude());
+        cv.put(TBL_BLOCKS.LONGITUDE,block.getBlockLongitude());
+        cv.put(TBL_BLOCKS.LOCATION_DESC,block.getBlockDescription());
+        cv.put(TBL_BLOCKS.LOCATION_NAME,block.getBlockDescription());
+        cv.put(TBL_BLOCKS.STATUS,block.getStatus());
+        cv.put(TBL_BLOCKS.TRAVEL_FROM,block.getTravelFrom());
+        cv.put(TBL_BLOCKS.TRAVEL_TO,block.getTravelTo());
+        cv.put(TBL_BLOCKS.TRIP_ID,block.getTripId());
+
+        long rowId;
+
+        rowId = db.insert(TABLE_BLOCKS, null, cv);
+    }
+
+
+    public TripModel getTrip(int tripId){
+        Cursor cursor=null;
+        TripModel response=null;
+        String QUERY="SELECT trip_name, trip_id, location_desc, status, start_date,end_date collaborators_count, collaborators_id, cover_pic, trip_key, travel_from, travel_to, sync_status FROM "+TABLE_TRIPS+" WHERE "+TBL_TRIPS.TRIP_ID+" = "+tripId;
+        cursor=db.rawQuery(QUERY,null);
+        if(cursor.moveToFirst()){
+            do{
+
+                response=new TripModel(cursor.getString(0),
+                                cursor.getInt(1),
+                                cursor.getString(2),
+                                cursor.getInt(3),
+                                cursor.getString(4),
+                                cursor.getString(5),
+                                cursor.getInt(6),
+                                cursor.getString(7),
+                                cursor.getString(8),
+                                cursor.getString(9),
+                                cursor.getString(10),
+                                cursor.getString(11),
+                                cursor.getInt(12));
+            }while (cursor.moveToNext());
+        }
+        return response;
+    }
+
+    public BlockModel getBlock(int blockId){
+        Cursor cursor=null;
+        BlockModel response=null;
+        String QUERY="SELECT block_id, block_title, latitude, longitude, location_name,location_desc, date_time_entry, date_time_exit, block_type, trip_key,travel_from, travel_to, trip_id, status FROM "+TABLE_BLOCKS+" WHERE "+TBL_BLOCKS.BLOCK_ID+" = "+blockId;
+        cursor=db.rawQuery(QUERY,null);
+        if(cursor.moveToFirst()){
+            do{
+                response=new BlockModel(cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getString(7),
+                        cursor.getInt(8),
+                        cursor.getString(9),
+                        cursor.getString(10),
+                        cursor.getString(11),
+                        cursor.getInt(12),
+                        cursor.getInt(13)
+                        );
+
+                }while (cursor.moveToNext());
+        }
+        return response;
+    }
+
+
 
     public UserModel getUser(int user_id){
         Cursor cursor=null;
@@ -148,7 +245,7 @@ public class DBHandler {
             sqLiteDatabase.execSQL(selectQuery);
 
 
-            selectQuery = "CREATE  TABLE \"tbl_blocks\" (\"id\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , \"block_id\" INTEGER, \"location_name\" TEXT, \"location_desc\" TEXT, \"travel_from\" TEXT, \"travel_to\" TEXT, \"block_type\" INTEGER DEFAULT 0, \"status\" INTEGER DEFAULT 0 , \"trip_id\" INTEGER, \"trip_key\" TEXT, \"latitude\" TEXT, \"longitude\" TEXT, \"date_time_entry\" TEXT, \"date_time_exit\" TEXT)";
+            selectQuery = "CREATE  TABLE \"tbl_blocks\" (\"id\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , \"block_id\" INTEGER, \"location_name\" TEXT,\"block_title\" TEXT, \"location_desc\" TEXT, \"travel_from\" TEXT, \"travel_to\" TEXT, \"block_type\" INTEGER DEFAULT 0, \"status\" INTEGER DEFAULT 0 , \"trip_id\" INTEGER, \"trip_key\" TEXT, \"latitude\" TEXT, \"longitude\" TEXT, \"date_time_entry\" TEXT, \"date_time_exit\" TEXT)";
             sqLiteDatabase.execSQL(selectQuery);
 
 

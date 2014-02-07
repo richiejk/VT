@@ -9,10 +9,121 @@ public class BlockModel {
     String blockLatitude;
     String blockLongitude;
     String blockLocation;
+    String blockDescription;
+    String blockStartDateTime;
+    String blockEndDateTime;
+    int blockType;
+    String tripKey;
+    String travelFrom;
+    String travelTo;
+
+    int status;
     String blockDate;
     FriendModel user;
     boolean isSelf;
     int tripId;
+
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public BlockModel(int blockId, String blockTitle, String blockLongitude, String blockLatitude, String blockLocation, String blockDescription, String blockStartDateTime, String blockEndDateTime, int blockType, String tripKey, String travelFrom, String travelTo, int tripId, int status) {
+        this.blockId = blockId;
+        this.blockTitle = blockTitle;
+        this.blockLongitude = blockLongitude;
+        this.blockLatitude = blockLatitude;
+        this.blockLocation = blockLocation;
+        this.blockDescription = blockDescription;
+        this.blockStartDateTime = blockStartDateTime;
+        this.blockEndDateTime = blockEndDateTime;
+        this.blockType = blockType;
+        this.tripKey = tripKey;
+        this.travelFrom = travelFrom;
+        this.travelTo = travelTo;
+        this.tripId = tripId;
+        this.status = status;
+    }
+
+    public BlockModel(int blockId, String blockTitle, String blockLatitude, String blockLongitude, String blockLocation, String blockDescription, String blockStartDateTime, String blockEndDateTime, int blockType, String tripKey, String travelFrom, String travelTo, String blockDate, FriendModel user, boolean isSelf, int tripId,int status) {
+        this.blockId = blockId;
+        this.blockTitle = blockTitle;
+        this.blockLatitude = blockLatitude;
+        this.blockLongitude = blockLongitude;
+        this.blockLocation = blockLocation;
+        this.blockDescription = blockDescription;
+        this.blockStartDateTime = blockStartDateTime;
+        this.blockEndDateTime = blockEndDateTime;
+        this.blockType = blockType;
+        this.tripKey = tripKey;
+        this.travelFrom = travelFrom;
+        this.travelTo = travelTo;
+        this.blockDate = blockDate;
+        this.user = user;
+        this.isSelf = isSelf;
+        this.tripId = tripId;
+        this.status=status;
+    }
+
+    public String getTravelTo() {
+        return travelTo;
+    }
+
+    public void setTravelTo(String travelTo) {
+        this.travelTo = travelTo;
+    }
+
+    public String getTravelFrom() {
+        return travelFrom;
+    }
+
+    public void setTravelFrom(String travelFrom) {
+        this.travelFrom = travelFrom;
+    }
+
+    public String getBlockDescription() {
+        return blockDescription;
+    }
+
+    public void setBlockDescription(String blockDescription) {
+        this.blockDescription = blockDescription;
+    }
+
+    public String getBlockStartDateTime() {
+        return blockStartDateTime;
+    }
+
+    public void setBlockStartDateTime(String blockStartDateTime) {
+        this.blockStartDateTime = blockStartDateTime;
+    }
+
+    public String getBlockEndDateTime() {
+        return blockEndDateTime;
+    }
+
+    public void setBlockEndDateTime(String blockEndDateTime) {
+        this.blockEndDateTime = blockEndDateTime;
+    }
+
+    public int getBlockType() {
+        return blockType;
+    }
+
+    public void setBlockType(int blockType) {
+        this.blockType = blockType;
+    }
+
+    public String getTripKey() {
+        return tripKey;
+    }
+
+    public void setTripKey(String tripKey) {
+        this.tripKey = tripKey;
+    }
 
     public int getTripId() {
         return tripId;

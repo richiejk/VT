@@ -17,9 +17,55 @@ public class TripModel {
     int collaborators_count;
     int rating;
     ArrayList<FriendModel> collaborators;
+    String collaborators_ids;
     boolean isDownloaded;
     String trip_cover_picture;
     boolean isPublished;
+
+    String trip_key;
+    String trip_starting_from;
+    String trip_ending_at;
+    int sync_status;
+
+    public String getCollaborators_ids() {
+        return collaborators_ids;
+    }
+
+    public void setCollaborators_ids(String collaborators_ids) {
+        this.collaborators_ids = collaborators_ids;
+    }
+
+    public String getTrip_ending_at() {
+        return trip_ending_at;
+    }
+
+    public void setTrip_ending_at(String trip_ending_at) {
+        this.trip_ending_at = trip_ending_at;
+    }
+
+    public String getTrip_key() {
+        return trip_key;
+    }
+
+    public void setTrip_key(String trip_key) {
+        this.trip_key = trip_key;
+    }
+
+    public String getTrip_starting_from() {
+        return trip_starting_from;
+    }
+
+    public void setTrip_starting_from(String trip_starting_from) {
+        this.trip_starting_from = trip_starting_from;
+    }
+
+    public int getSync_status() {
+        return sync_status;
+    }
+
+    public void setSync_status(int sync_status) {
+        this.sync_status = sync_status;
+    }
 
     public boolean isPublished() {
         return isPublished;
@@ -139,5 +185,63 @@ public class TripModel {
         this.trip_cover_picture = trip_cover_picture;
         this.collaborators_count=collaborators_count;
         this.isPublished=isPublished;
+    }
+
+    public TripModel(String trip_name, int trip_id, String trip_description, int trip_status, String trip_start_date, String trip_end_date, int fans_count, int collaborators_count, int rating, ArrayList<FriendModel> collaborators, boolean isDownloaded, String trip_cover_picture, boolean isPublished, String trip_key, String trip_starting_from, int sync_status,String trip_ending_at) {
+        this.trip_name = trip_name;
+        this.trip_id = trip_id;
+        this.trip_description = trip_description;
+        this.trip_status = trip_status;
+        this.trip_start_date = trip_start_date;
+        this.trip_end_date = trip_end_date;
+        this.fans_count = fans_count;
+        this.collaborators_count = collaborators_count;
+        this.rating = rating;
+        this.collaborators = collaborators;
+        this.isDownloaded = isDownloaded;
+        this.trip_cover_picture = trip_cover_picture;
+        this.isPublished = isPublished;
+        this.trip_key = trip_key;
+        this.trip_starting_from = trip_starting_from;
+        this.sync_status = sync_status;
+        this.trip_ending_at=trip_ending_at;
+    }
+
+    public TripModel(String trip_name, int trip_id, String trip_description, int trip_status, String trip_start_date, String trip_end_date, int fans_count, int collaborators_count, int rating, ArrayList<FriendModel> collaborators, String collaborators_ids, boolean isDownloaded, String trip_cover_picture, boolean isPublished, String trip_key, String trip_starting_from, String trip_ending_at, int sync_status) {
+        this.trip_name = trip_name;
+        this.trip_id = trip_id;
+        this.trip_description = trip_description;
+        this.trip_status = trip_status;
+        this.trip_start_date = trip_start_date;
+        this.trip_end_date = trip_end_date;
+        this.fans_count = fans_count;
+        this.collaborators_count = collaborators_count;
+        this.rating = rating;
+        this.collaborators = collaborators;
+        this.collaborators_ids = collaborators_ids;
+        this.isDownloaded = isDownloaded;
+        this.trip_cover_picture = trip_cover_picture;
+        this.isPublished = isPublished;
+        this.trip_key = trip_key;
+        this.trip_starting_from = trip_starting_from;
+        this.trip_ending_at = trip_ending_at;
+        this.sync_status = sync_status;
+    }
+
+
+    public TripModel(String trip_name, int trip_id, String trip_description, int trip_status, String trip_start_date, String trip_end_date, int collaborators_count, String collaborators_ids, String trip_cover_picture, String trip_key, String trip_starting_from, String trip_ending_at, int sync_status) {
+        this.trip_name = trip_name;
+        this.trip_id = trip_id;
+        this.trip_description = trip_description;
+        this.trip_status = trip_status;
+        this.trip_start_date = trip_start_date;
+        this.trip_end_date = trip_end_date;
+        this.collaborators_count = collaborators_count;
+        this.collaborators_ids = collaborators_ids;
+        this.trip_cover_picture = trip_cover_picture;
+        this.trip_key = trip_key;
+        this.trip_starting_from = trip_starting_from;
+        this.trip_ending_at = trip_ending_at;
+        this.sync_status = sync_status;
     }
 }
