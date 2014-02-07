@@ -18,6 +18,8 @@ public class Finals {
     public static int SHARED_PREFS_CURRENTLY_ON_TRIP_FALSE=0;
 
     public static String SHARED_PREFS_CURRENT_USER_ID="uId";
+    public static String SHARED_PREFS_CURRENT_TRIP_ID="tId";
+    public static String SHARED_PREFS_CURRENT_BLOCK_ID="bId";
 
     public static String URL_IMG_PATH_ME = "/data/data/com.richiejk.voyagetales/me.jpg";
 

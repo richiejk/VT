@@ -14,11 +14,20 @@ public class VoyageTalesApplication extends Application {
     public int IS_ON_TRIP= Finals.SHARED_PREFS_CURRENTLY_ON_TRIP_FALSE;
     public int TRIP_CURRENT_TYPE;
     int travel_type_id;
+    int trip_id;
 
     String location_name;
     String location_desc;
     String travel_from;
     String travel_to;
+
+    public int getTrip_id() {
+        return trip_id;
+    }
+
+    public void setTrip_id(int trip_id) {
+        this.trip_id = trip_id;
+    }
 
     public String getLocation_name() {
         return location_name;
