@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 
 import com.richiejk.voyagetales.common.Finals;
 import com.richiejk.voyagetales.models.BlockModel;
+import com.richiejk.voyagetales.models.TripModel;
 import com.richiejk.voyagetales.models.UserModel;
 
 /**
@@ -17,6 +18,15 @@ public class VoyageTalesApplication extends Application {
     int travel_type_id;
     int trip_id;
     BlockModel currentBlock;
+    TripModel currentTrip;
+
+    public TripModel getCurrentTrip() {
+        return currentTrip;
+    }
+
+    public void setCurrentTrip(TripModel currentTrip) {
+        this.currentTrip = currentTrip;
+    }
 
     public BlockModel getCurrentBlock() {
         return currentBlock;

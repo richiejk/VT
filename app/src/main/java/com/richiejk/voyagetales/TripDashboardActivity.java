@@ -64,10 +64,10 @@ public class TripDashboardActivity extends VoyageTalesActivity {
         ui.save_location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                application.setLocation_name(ui.location_name.getText().toString());
-                application.setLocation_desc(ui.location_desc.getText().toString());
-                ui.location_name_final.setText(application.getLocation_name());
-                ui.location_desc_final.setText(application.getLocation_desc());
+                application.getCurrentBlock().setBlockLocation(ui.location_name.getText().toString());
+                application.getCurrentBlock().setBlockDescription(ui.location_desc.getText().toString());
+                ui.location_name_final.setText(application.getCurrentBlock().getBlockLocation());
+                ui.location_desc_final.setText(application.getCurrentBlock().getBlockDescription());
                 ui.ll_location_init.setVisibility(View.GONE);
                 ui.ll_location_final.setVisibility(View.VISIBLE);
 

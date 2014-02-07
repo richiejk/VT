@@ -11,5 +11,7 @@
     <string name="title_activity_friends">FriendsActivity</string>
     <string name="title_activity_trip">TripActivity</string>
     <string name="title_activity_trip_dashboard">TripDashboardActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="landing_activity">LandingActivity</string>
 
 </resources>
