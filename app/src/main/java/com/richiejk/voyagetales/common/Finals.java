@@ -25,4 +25,8 @@ public class Finals {
     public static int LEAF_PHOTO=1;
     public static int LEAF_NOTE=2;
 
+
+    public static int TRIP_TYPE_LOCATION=0;
+    public static int TRIP_TYPE_TRAVEL=1;
+
 }

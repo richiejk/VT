@@ -6,89 +6,130 @@
     tools:context="com.richiejk.voyagetales.TripDashboardActivity"
     tools:ignore="MergeRootFrame" >
 
+    <ImageView
+        android:scaleType="centerCrop"
+        android:src="@drawable/blue_winter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <RelativeLayout
         android:orientation="vertical"
-        android:background="#cAffffff"
-        android:layout_margin="@dimen/activity_horizontal_margin"
+        android:layout_alignParentBottom="true"
         android:id="@+id/ll_dashboard_while_in_trip"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+    >
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:gravity="top"
-            android:layout_gravity="top"
+            android:visibility="gone"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/blur_box_lighter"
+            android:id="@+id/ll_dashboard_location_et"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="0dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="0dp"
-            android:id="@+id/linearLayout2">
-            <Button
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:text="LOCATION"
-                android:background="#caffffff"
-                android:padding="@dimen/margin_8dp"
-                android:textSize="16sp"
-                android:layout_marginBottom="@dimen/margin_8dp"
-                android:textStyle="bold"
-                android:textColor="@color/icon_gray"
-                android:id="@+id/btn_profile_change_pwd" />
-
-            <Button
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:text="TRAVEL"
-                android:background="@color/text_lighter_gray"
-                android:padding="@dimen/margin_8dp"
-                android:textSize="16sp"
-                android:layout_marginBottom="@dimen/margin_8dp"
-                android:textStyle="bold"
-                android:textColor="@color/icon_gray"
-                android:id="@+id/btn_profile_change_pwd" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_dashboard_location"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:paddingTop="@dimen/activity_horizontal_margin"
             android:layout_below="@+id/linearLayout2"
             android:layout_above="@+id/linearLayout3">
 
             <EditText
+                android:id="@+id/editText_location_dashboard_location_name"
+                android:padding="@dimen/margin_8dp"
                 android:hint="Location Name"
-                android:background="@drawable/black_border_box"
-                android:layout_margin="@dimen/margin_8dp"
+                android:background="#AAffffff"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <EditText
+                android:id="@+id/editText_location_dashboard_location_desc"
+                android:padding="@dimen/margin_8dp"
+                android:gravity="top|left"
                 android:hint="Location Description"
-                android:background="@drawable/black_border_box"
-                android:layout_margin="@dimen/margin_8dp"
-                android:lines="2"
+                android:background="#AAffffff"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:lines="3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <Button
+                android:id="@+id/btn_dashboard_location_save"
                 android:layout_margin="@dimen/margin_8dp"
-                android:padding="@dimen/margin_8dp"
+                android:paddingTop="@dimen/margin_8dp"
+                android:paddingBottom="@dimen/margin_8dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
                 android:textColor="@color/text_lighter_gray"
                 android:text="Save"
+                android:minWidth="100dp"
                 android:layout_gravity="center_horizontal"
                 android:background="#cf000000"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/blur_box_lighter"
+            android:id="@+id/ll_dashboard_location_txt"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/activity_horizontal_margin"
+            android:layout_below="@+id/linearLayout2"
+            android:layout_above="@+id/linearLayout3">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:gravity="bottom"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:padding="@dimen/margin_8dp"
+                    android:textSize="22sp"
+                    android:text="Location Name"
+                    android:id="@+id/txt_location_dashboard_location_name"
+                    android:textColor="@color/text_light_gray"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:id="@+id/switch_type"
+                    android:src="@drawable/arrow_alt"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp" />
+
+                </LinearLayout>
+
+
+            <EditText
+                android:textSize="16sp"
+                android:textColor="@color/text_light_gray"
+                android:padding="@dimen/margin_8dp"
+                android:id="@+id/txt_location_dashboard_location_desc"
+                android:gravity="top|left"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:text="Location Description"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:lines="3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
@@ -161,10 +202,12 @@
         </LinearLayout>
 
         <LinearLayout
+            android:background="#51000000"
             android:gravity="bottom|center_horizontal"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_width="match_parent"
             android:orientation="horizontal"
+            android:paddingBottom="@dimen/margin_8dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -174,13 +217,13 @@
             <ImageView
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="@dimen/margin_8dp"
-                android:id="@+id/img_dashboard_cam"
+                android:id="@+id/img_travel_dashboard_cam"
                 android:layout_width="50dp"
                 android:src="@drawable/cam_alt"
                 android:layout_height="50dp"/>
 
             <ImageView
-                android:id="@+id/img_dashboard_note"
+                android:id="@+id/img_travel_dashboard_note"
                 android:layout_marginLeft="@dimen/margin_8dp"
                 android:layout_width="50dp"
                 android:src="@drawable/note_alt"
@@ -188,19 +231,27 @@
                 android:layout_height="50dp"/>
 
             <ImageView
-                android:id="@+id/img_dashboard_audio"
+                android:id="@+id/img_travel_dashboard_audio"
                 android:layout_width="50dp"
                 android:src="@drawable/mic_alt"
                 android:layout_gravity="bottom"
                 android:layout_height="50dp"/>
             <ImageView
-                android:id="@+id/img_dashboard_stop_trip"
+                android:id="@+id/img_travel_dashboard_add_coll"
                 android:layout_width="50dp"
                 android:src="@drawable/coll_alt"
                 android:layout_gravity="bottom"
                 android:layout_height="50dp"/>
+
             <ImageView
-                android:id="@+id/img_dashboard_stop_trip"
+                android:id="@+id/img_travel_dashboard_check_in"
+                android:layout_width="50dp"
+                android:src="@drawable/check_in_alt"
+                android:layout_gravity="bottom"
+                android:layout_height="50dp"/>
+
+            <ImageView
+                android:id="@+id/img_travel_dashboard_stop_trip"
                 android:layout_width="50dp"
                 android:layout_marginRight="@dimen/margin_8dp"
                 android:src="@drawable/power_alt"
