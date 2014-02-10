@@ -17,8 +17,17 @@ public class VoyageTalesApplication extends Application {
     public int TRIP_CURRENT_TYPE;
     int travel_type_id;
     int trip_id;
+    String tripKey;
     BlockModel currentBlock;
     TripModel currentTrip;
+
+    public String getTripKey() {
+        return tripKey;
+    }
+
+    public void setTripKey(String tripKey) {
+        this.tripKey = tripKey;
+    }
 
     public TripModel getCurrentTrip() {
         return currentTrip;
@@ -29,6 +38,8 @@ public class VoyageTalesApplication extends Application {
     }
 
     public BlockModel getCurrentBlock() {
+
+
         return currentBlock;
     }
 

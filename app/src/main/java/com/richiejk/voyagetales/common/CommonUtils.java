@@ -3,10 +3,21 @@ package com.richiejk.voyagetales.common;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by richie on 1/31/14.
  */
 public class CommonUtils {
+
+    public static String getCurrentDateTime(){
+        SimpleDateFormat dateFormat=new SimpleDateFormat("dd/MM/yyyy ; hh:mm");
+        Date date= Calendar.getInstance().getTime();
+        return dateFormat.format(date);
+    }
 
     public static int checkIfLoginIsSaved(Context context){
         SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);
@@ -48,6 +59,18 @@ public class CommonUtils {
         SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreferences.edit();
         editor.putInt(Finals.SHARED_PREFS_CURRENT_USER_ID,id);
+        editor.commit();
+    }
+
+    public static String getCurrentTripKey(Context context){
+        SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);
+        return sharedPreferences.getString(Finals.SHARED_PREFS_CURRENT_TRIP_KEY,"");
+    }
+
+    public static void setCurrentTripKey(Context context,String key){
+        SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=sharedPreferences.edit();
+        editor.putString(Finals.SHARED_PREFS_CURRENT_TRIP_KEY,key);
         editor.commit();
     }
 

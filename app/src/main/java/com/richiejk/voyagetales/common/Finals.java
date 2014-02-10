@@ -21,6 +21,10 @@ public class Finals {
     public static String SHARED_PREFS_CURRENT_TRIP_ID="tId";
     public static String SHARED_PREFS_CURRENT_BLOCK_ID="bId";
 
+    public static String SHARED_PREFS_CURRENT_TRIP_KEY="tKey";
+
+
+
     public static String URL_IMG_PATH_ME = "/data/data/com.richiejk.voyagetales/me.jpg";
 
     public static int LEAF_AUDIO=0;

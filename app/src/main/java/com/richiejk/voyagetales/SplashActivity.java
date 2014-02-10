@@ -31,6 +31,7 @@ public class SplashActivity extends VoyageTalesActivity {
             if(CommonUtils.checkIfCurrentlyOnTrip(this)==Finals.SHARED_PREFS_CURRENTLY_ON_TRIP_TRUE){
                 application.setCurrentTrip(dbHandler.getTrip(CommonUtils.getCurrentTripId(this)));
                 if(CommonUtils.getCurrentBlockId(this)!=0){
+                    application.setTripKey(CommonUtils.getCurrentTripKey(this));
                     BlockModel block=dbHandler.getBlock(CommonUtils.getCurrentBlockId(this));
                     application.setCurrentBlock(block);
                     application.TRIP_CURRENT_TYPE=block.getBlockType();
