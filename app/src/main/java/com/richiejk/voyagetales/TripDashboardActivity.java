@@ -73,7 +73,7 @@ public class TripDashboardActivity extends VoyageTalesActivity {
         ui.ll_travel_init=(LinearLayout)findViewById(R.id.ll_dashboard_travel_et);
         ui.ll_travel_final=(LinearLayout)findViewById(R.id.ll_dashboard_travel_txt);
 
-        ui.save_travel=(Button)findViewById(R.id.save_travel);
+        ui.save_travel=(Button)findViewById(R.id.btn_dashboard_travel_save);
 
         ui.cam=(ImageView)findViewById(R.id.img_travel_dashboard_cam);
         ui.note=(ImageView)findViewById(R.id.img_travel_dashboard_note);
@@ -134,6 +134,9 @@ public class TripDashboardActivity extends VoyageTalesActivity {
                 ui.travel_to_final.setText(application.getCurrentBlock().getTravelTo());
                 //CommonUtils.setCurrentBlockId(TripDashboardActivity.this,application.getCurrentBlock().getBlockId());
                 //todo add to db
+
+                ui.ll_travel_init.setVisibility(View.GONE);
+                ui.ll_travel_final.setVisibility(View.VISIBLE);
 
             }
         });
