@@ -132,6 +132,7 @@ public class TripDashboardActivity extends VoyageTalesActivity {
                 application.setCurrentBlock(new BlockModel(ui.travel_from.getText().toString(),  gpsTracker.getLatitude()+"", gpsTracker.getLongitude()+"", ui.location_desc.getText().toString(), CommonUtils.getCurrentDateTime(), Finals.TRIP_TYPE_TRAVEL,"asdasd", 0,ui.travel_to.getText().toString() ,1));
                 ui.travel_from_final.setText(application.getCurrentBlock().getTravelFrom());
                 ui.travel_to_final.setText(application.getCurrentBlock().getTravelTo());
+                ui.travel_location_name_final.setText(application.getCurrentBlock().getBlockDescription());
                 //CommonUtils.setCurrentBlockId(TripDashboardActivity.this,application.getCurrentBlock().getBlockId());
                 //todo add to db
 
@@ -150,6 +151,10 @@ public class TripDashboardActivity extends VoyageTalesActivity {
                 dialog.setButton(DialogInterface.BUTTON_POSITIVE,"Yes",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        ui.travel_from.setText("");
+                        ui.travel_to.setText("");
+                        ui.travel_location_name.setText("");
+
                         ui.ll_location_init.setVisibility(View.GONE);
                         ui.ll_location_final.setVisibility(View.GONE);
                         ui.ll_travel_final.setVisibility(View.GONE);
@@ -176,6 +181,9 @@ public class TripDashboardActivity extends VoyageTalesActivity {
                 dialog.setButton(DialogInterface.BUTTON_POSITIVE,"Yes",new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        ui.location_name.setText("");
+                        ui.location_desc.setText("");
+
                         ui.ll_location_init.setVisibility(View.VISIBLE);
                         ui.ll_location_final.setVisibility(View.GONE);
                         ui.ll_travel_final.setVisibility(View.GONE);

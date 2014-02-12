@@ -107,7 +107,8 @@ public class DashBoardActivity extends VoyageTalesActivity {
         ui.startTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(DashBoardActivity.this,TripDashboardActivity.class);
+
+                Intent intent=new Intent(DashBoardActivity.this,TestTripDashboard.class);
                 startActivity(intent);
             }
         });

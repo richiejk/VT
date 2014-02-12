@@ -13,5 +13,6 @@
     <string name="title_activity_trip_dashboard">TripDashboardActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="landing_activity">LandingActivity</string>
+    <string name="title_activity_test_trip_dashboard">TestTripDashboard</string>
 
 </resources>
