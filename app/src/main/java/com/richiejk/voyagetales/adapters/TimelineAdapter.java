@@ -2,10 +2,12 @@ package com.richiejk.voyagetales.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.richiejk.voyagetales.R;
@@ -22,6 +24,9 @@ import java.util.List;
 public class TimelineAdapter extends ArrayAdapter<BlockModel> {
     ArrayList<BlockModel> blocks;
     Context context;
+    VoyageTalesApplication application;
+
+
 
     public TimelineAdapter(Context context, int textViewResourceId, ArrayList<BlockModel> objects) {
         super(context, textViewResourceId, objects);
@@ -31,20 +36,28 @@ public class TimelineAdapter extends ArrayAdapter<BlockModel> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        VoyageTalesApplication application=(VoyageTalesApplication)((Activity)context).getApplication();
+
         View row=convertView;
-        BlockModel currentObject= blocks.get(position);
 
-        if(row==null){
-            LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row=inflater.inflate(R.layout.item_timeline,parent,false);
-        }
+        application=(VoyageTalesApplication)((Activity)context).getApplication();
+        Typeface typeface=application.getTypeface();
+            BlockModel currentObject= blocks.get(position);
+            if(row==null){
+                LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                row=inflater.inflate(R.layout.item_timeline,parent,false);
+            }
 
-        TextView name=(TextView)row.findViewById(R.id.txt_location_name_test_timeline);
-        TextView desc=(TextView)row.findViewById(R.id.txt_location_desc_test_timeline);
+            TextView name=(TextView)row.findViewById(R.id.txt_location_name_test_timeline);
+            TextView desc=(TextView)row.findViewById(R.id.txt_location_desc_test_timeline);
+            TextView time=(TextView)row.findViewById(R.id.txt_time_test_timeline);
 
-        name.setText(currentObject.getBlockTitle());
-        desc.setText(currentObject.getBlockDescription());
+            time.setText(currentObject.getBlockStartDateTime());
+            name.setText(currentObject.getBlockTitle());
+            desc.setText(currentObject.getBlockDescription());
+
+            time.setTypeface(typeface);
+            name.setTypeface(typeface);
+            desc.setTypeface(typeface);
         return row;
     }
 
