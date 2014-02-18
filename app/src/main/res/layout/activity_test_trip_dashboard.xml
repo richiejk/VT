@@ -135,6 +135,7 @@
                 android:singleLine="true"
                 android:id="@+id/txt_test_travel_dashboard_trip_time"
                 android:textSize="12sp"
+                android:layout_marginBottom="@dimen/margin_8dp"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:textColor="@color/text_light_gray"
                 android:layout_gravity="center"

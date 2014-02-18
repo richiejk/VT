@@ -123,6 +123,17 @@ public class UserModel {
         this.type = type;
     }
 
+    public UserModel(String user_name, String email_id, String profile_picture, int friends_count, int messages_count, int trips_count, int status, int type) {
+        this.user_name = user_name;
+        this.email_id = email_id;
+        this.profile_picture = profile_picture;
+        this.friends_count = friends_count;
+        this.messages_count = messages_count;
+        this.trips_count = trips_count;
+        this.status = status;
+        this.type = type;
+    }
+
     public UserModel() {
     }
 }

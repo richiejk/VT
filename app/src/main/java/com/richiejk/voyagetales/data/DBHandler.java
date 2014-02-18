@@ -247,7 +247,7 @@ public class DBHandler {
     }
 
 
-    public void insertUser(UserModel userModel){
+    public int insertUser(UserModel userModel){
         ContentValues cv= new ContentValues();
         cv.put(TBL_USER.EMAIL_ID,userModel.getEmail_id());
         cv.put(TBL_USER.FRIENDS_COUNT,userModel.getFriends_count());
@@ -263,12 +263,25 @@ public class DBHandler {
 
         // First try a blind update
         //       rowId = db.update(TBL_TASKS, cv, " task_id=? AND sync_status=?", new String[]{ taskModel.getTaskId()+"",Finals.SYNC_STATUS_SYNCED+"" });
-        rowId = db.update(TABLE_USER, cv, " user_id=? ", new String[]{ userModel.getUser_id()+"" });
+        rowId = db.update(TABLE_USER, cv, " email_id=? ", new String[]{ userModel.getEmail_id()+"" });
 
         // If no rows are affected, we can insert it as a new record.
         if(rowId == 0){
             rowId = db.insert(TABLE_USER, null, cv);
         }
+
+
+        int id=0;
+        Cursor cursor=null;
+        String QUERY="SELECT user_id FROM "+TABLE_USER+" WHERE "+TBL_USER.EMAIL_ID+" LIKE '"+userModel.getEmail_id()+"'";
+        cursor=db.rawQuery(QUERY,null);
+        if(cursor.moveToFirst()){
+            do{
+                id=cursor.getInt(0);
+            }while (cursor.moveToNext());
+        }
+        return id;
+
     }
     /**
      * -----------------------------------------------------------------------

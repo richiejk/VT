@@ -34,7 +34,7 @@ public class TestTripDashboard extends VoyageTalesActivity {
     class UISet{
         LinearLayout ll_bottom_add_layout,ll_bottom_add_layout_inner;
         TextView name_text_header,trip_name,trip_desc,trip_time;
-        ImageView settings_header,logout_header,cam,check_in,add_friend,note,audio,stop_trip;
+        ImageView settings_header,logout_header,cam,check_in,add_friend,note,audio,stop_trip,add_before,add_after;
     }
     UISet ui=new UISet();
     TimelineAdapter adapter;
@@ -66,6 +66,8 @@ public class TestTripDashboard extends VoyageTalesActivity {
         ui.add_friend=(ImageView)findViewById(R.id.img_test_travel_dashboard_add_coll);
         ui.settings_header=(ImageView)findViewById(R.id.img_settings);
         ui.logout_header=(ImageView)findViewById(R.id.img_logout);
+        ui.add_before=(ImageView)findViewById(R.id.img_test_travel_dashboard_add_before);
+        ui.add_after=(ImageView)findViewById(R.id.img_test_travel_dashboard_add_after);
         ui.trip_name=(TextView)findViewById(R.id.txt_test_travel_dashboard_trip_name);
         ui.trip_desc=(TextView)findViewById(R.id.txt_test_travel_dashboard_trip_desc);
         ui.trip_time=(TextView)findViewById(R.id.txt_test_travel_dashboard_trip_time);
