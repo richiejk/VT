@@ -131,9 +131,6 @@ public class LandingActivity extends VoyageTalesActivity {
             Log.i("LOG_STATUS_CODE_INITIATOR","START");
         }
 
-
-
-
         ui.progressDialog.hide();
 
         int user_id=1;

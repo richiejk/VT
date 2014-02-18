@@ -2,6 +2,7 @@ package com.richiejk.voyagetales.common;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.SystemClock;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -18,6 +19,11 @@ public class CommonUtils {
         Date date= Calendar.getInstance().getTime();
         return dateFormat.format(date);
     }
+
+    public static long getCurrentDateTimeInMillis(){
+        return  SystemClock.currentThreadTimeMillis();
+    }
+
 
     public static int checkIfLoginIsSaved(Context context){
         SharedPreferences sharedPreferences=context.getSharedPreferences("USER_DATA",Context.MODE_PRIVATE);

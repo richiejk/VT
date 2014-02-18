@@ -187,6 +187,19 @@ public class TripModel {
         this.isPublished=isPublished;
     }
 
+    public TripModel(String trip_name, int trip_id, String trip_description, int trip_status, String trip_start_date, boolean isDownloaded, String trip_cover_picture, boolean isPublished, String trip_key, int sync_status) {
+        this.trip_name = trip_name;
+        this.trip_id = trip_id;
+        this.trip_description = trip_description;
+        this.trip_status = trip_status;
+        this.trip_start_date = trip_start_date;
+        this.isDownloaded = isDownloaded;
+        this.trip_cover_picture = trip_cover_picture;
+        this.isPublished = isPublished;
+        this.trip_key = trip_key;
+        this.sync_status = sync_status;
+    }
+
     public TripModel(String trip_name, int trip_id, String trip_description, int trip_status, String trip_start_date, String trip_end_date, int fans_count, int collaborators_count, int rating, ArrayList<FriendModel> collaborators, boolean isDownloaded, String trip_cover_picture, boolean isPublished, String trip_key, String trip_starting_from, int sync_status,String trip_ending_at) {
         this.trip_name = trip_name;
         this.trip_id = trip_id;

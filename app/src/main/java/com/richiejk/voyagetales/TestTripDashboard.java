@@ -73,14 +73,14 @@ public class TestTripDashboard extends VoyageTalesActivity {
         ui.ll_bottom_add_layout_inner.setVisibility(View.INVISIBLE);
         listView.setSelection(0);
 
-       // ui.trip_name.setText(application.getCurrentTrip().getTrip_name());
-    //    ui.trip_desc.setText(application.getCurrentTrip().getTrip_description());
- //       ui.trip_time.setText("Trip Started On: " + application.getCurrentTrip().getTrip_start_date());
+        ui.trip_name.setText(application.getCurrentTrip().getTrip_name());
+        ui.trip_desc.setText(application.getCurrentTrip().getTrip_description());
+        ui.trip_time.setText("Trip Started On: " + application.getCurrentTrip().getTrip_start_date());
 
         ui.name_text_header.setText("(richie)");
-        ui.trip_name.setText("Test Static Trip");
-        ui.trip_desc.setText("This is a static trip used only to test blah blah blah blah");
-        ui.trip_time.setText("Trip Started On: 13/02/2014 12:37");
+//        ui.trip_name.setText("Test Static Trip");
+//        ui.trip_desc.setText("This is a static trip used only to test blah blah blah blah");
+//        ui.trip_time.setText("Trip Started On: 13/02/2014 12:37");
 
 
     }

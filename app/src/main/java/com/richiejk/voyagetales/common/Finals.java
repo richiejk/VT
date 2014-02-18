@@ -23,6 +23,9 @@ public class Finals {
 
     public static String SHARED_PREFS_CURRENT_TRIP_KEY="tKey";
 
+    public static int SYNC_STATUS_FALSE=0;
+    public static int SYNC_STATUS_TRUE=1;
+
 
 
     public static String URL_IMG_PATH_ME = "/data/data/com.richiejk.voyagetales/me.jpg";

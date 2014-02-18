@@ -85,12 +85,12 @@ public class DBHandler {
         cv.put(TBL_TRIPS.TRIP_KEY,trip.getTrip_key());
         cv.put(TBL_TRIPS.COVER_PIC,trip.getTrip_cover_picture());
         cv.put(TBL_TRIPS.FANS_COUNT,trip.getFans_count());
+        cv.put(TBL_TRIPS.START_DATE,trip.getTrip_start_date());
         cv.put(TBL_TRIPS.STATUS,trip.getTrip_status());
         cv.put(TBL_TRIPS.SYNC_STATUS,trip.getSync_status());
         cv.put(TBL_TRIPS.TRAVEL_FROM,trip.getTrip_starting_from());
         cv.put(TBL_TRIPS.TRAVEL_TO,trip.getTrip_ending_at());
         cv.put(TBL_TRIPS.TRIP_DESC,trip.getTrip_description());
-        cv.put(TBL_TRIPS.TRIP_ID,trip.getTrip_id());
         cv.put(TBL_TRIPS.TRIP_NAME,trip.getTrip_name());
         cv.put(TBL_TRIPS.COLLABORATORS_ID,trip.getCollaborators_ids());
 
@@ -146,7 +146,7 @@ public class DBHandler {
     public TripModel getTrip(int tripId){
         Cursor cursor=null;
         TripModel response=null;
-        String QUERY="SELECT trip_name, trip_id, location_desc, status, start_date,end_date collaborators_count, collaborators_id, cover_pic, trip_key, travel_from, travel_to, sync_status FROM "+TABLE_TRIPS+" WHERE "+TBL_TRIPS.TRIP_ID+" = "+tripId;
+        String QUERY="SELECT trip_name, trip_id,trip_desc, status, start_date,end_date, collaborators_count, collaborators_id, cover_pic, trip_key, travel_from, travel_to, sync_status FROM "+TABLE_TRIPS+" WHERE "+TBL_TRIPS.TRIP_ID+" = "+tripId;
         cursor=db.rawQuery(QUERY,null);
         if(cursor.moveToFirst()){
             do{
@@ -164,6 +164,32 @@ public class DBHandler {
                                 cursor.getString(10),
                                 cursor.getString(11),
                                 cursor.getInt(12));
+            }while (cursor.moveToNext());
+        }
+        return response;
+    }
+
+    public TripModel getTrip(long tripKey){
+        Cursor cursor=null;
+        TripModel response=null;
+        String QUERY="SELECT trip_name, trip_id, trip_desc, status, start_date,end_date, collaborators_count, collaborators_id, cover_pic, trip_key, travel_from, travel_to, sync_status FROM "+TABLE_TRIPS+" WHERE "+TBL_TRIPS.TRIP_KEY+" LIKE '"+tripKey+"'";
+        cursor=db.rawQuery(QUERY,null);
+        if(cursor.moveToFirst()){
+            do{
+
+                response=new TripModel(cursor.getString(0),
+                        cursor.getInt(1),
+                        cursor.getString(2),
+                        cursor.getInt(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getInt(6),
+                        cursor.getString(7),
+                        cursor.getString(8),
+                        cursor.getString(9),
+                        cursor.getString(10),
+                        cursor.getString(11),
+                        cursor.getInt(12));
             }while (cursor.moveToNext());
         }
         return response;
@@ -261,7 +287,7 @@ public class DBHandler {
             String selectQuery = "CREATE  TABLE \"tbl_user\" (\"id\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , \"user_id\" INTEGER, \"user_name\" TEXT, \"email_id\" TEXT, \"profile_picture\" TEXT, \"status\" INTEGER DEFAULT 0, \"messages_count\" INTEGER DEFAULT 0 , \"friends_count\" INTEGER DEFAULT 0, \"trips_count\" INTEGER DEFAULT 0, \"type\" INTEGER DEFAULT 0)";
             sqLiteDatabase.execSQL(selectQuery);
 
-            selectQuery = "CREATE  TABLE \"tbl_trips\" (\"trip_id\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , \"trip_name\" TEXT,\"cover_pic\" TEXT, \"trip_desc\" TEXT, \"travel_from\" TEXT, \"travel_to\" TEXT, \"collaborators_count\" INTEGER DEFAULT 0, \"fans_count\" INTEGER DEFAULT 0 , \"status\" INTEGER DEFAULT 0, \"trip_key\" TEXT, \"collaborators_id\" TEXT, \"sync_status\" INTEGER DEFAULT 0)";
+            selectQuery = "CREATE  TABLE \"tbl_trips\" (\"trip_id\" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , \"trip_name\" TEXT,\"cover_pic\" TEXT, \"trip_desc\" TEXT, \"travel_from\" TEXT, \"travel_to\" TEXT, \"collaborators_count\" INTEGER DEFAULT 0, \"fans_count\" INTEGER DEFAULT 0 , \"status\" INTEGER DEFAULT 0, \"trip_key\" TEXT, \"collaborators_id\" TEXT, \"start_date\" TEXT,\"end_date\" TEXT, \"sync_status\" INTEGER DEFAULT 0)";
             sqLiteDatabase.execSQL(selectQuery);
 
 
