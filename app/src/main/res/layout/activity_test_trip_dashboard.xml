@@ -1,0 +1,234 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.richiejk.voyagetales.TestTripDashboard"
+    tools:ignore="MergeRootFrame" >
+    <ImageView
+        android:scaleType="centerCrop"
+        android:src="@drawable/blue_winter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <LinearLayout
+        android:background="@color/icon_gray"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/linearLayout">
+
+        <LinearLayout
+            android:id="@+id/ll_dashboard_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_gravity="center_vertical"
+                android:layout_height="40dp"
+                android:background="@drawable/vt_logo_wh"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="#eee"
+                android:layout_height="match_parent"
+                android:text="VOYAGE TALES"
+                />
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="#eee"
+                android:layout_height="match_parent"
+                android:text="()"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="right|center_vertical"
+            >
+            <ImageView
+                android:id="@+id/img_settings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:src="@drawable/settings_new"
+                />
+
+            <ImageView
+                android:id="@+id/img_logout"
+                android:layout_width="35dp"
+                android:layout_marginRight="@dimen/margin_8dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/logout"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:background="@color/darker_transparent_black_button_bg"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:layout_below="@+id/linearLayout"
+        android:id="@+id/linearLayout2">
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="Trip Name"
+                    android:layout_weight="1"
+                    android:id="@+id/txt_test_travel_dashboard_trip_name"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:textSize="18sp"
+                    android:layout_marginLeft="@dimen/margin_8dp"
+                    android:layout_marginRight="@dimen/margin_8dp"
+                    android:textColor="@color/text_light_gray"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/img_test_travel_dashboard_stop_trip"
+                    android:layout_width="40dp"
+                    android:layout_marginRight="@dimen/margin_8dp"
+                    android:src="@drawable/power_alt"
+                    android:layout_gravity="right|bottom"
+                    android:layout_height="40dp"/>
+                </LinearLayout>
+
+            <TextView
+            android:text="Trip Name"
+            android:id="@+id/txt_test_travel_dashboard_trip_desc"
+            android:singleLine="true"
+            android:textSize="12sp"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:textColor="@color/text_light_gray"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+            <TextView
+                android:text="Trip Started On:"
+                android:singleLine="true"
+                android:id="@+id/txt_test_travel_dashboard_trip_time"
+                android:textSize="12sp"
+                android:layout_marginBottom="@dimen/margin_8dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:textColor="@color/text_light_gray"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:background="@color/normal_transparent_black_button_bg"
+        android:gravity="bottom|center_horizontal"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/margin_8dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/ll_test_trip_dashboard_bottom_add"
+        >
+
+        <LinearLayout
+
+            android:id="@+id/ll_test_trip_dashboard_bottom_add_inner"
+            android:gravity="bottom|center_horizontal"
+            android:layout_gravity="bottom|center_horizontal"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/margin_8dp"
+                android:id="@+id/img_test_travel_dashboard_cam"
+                android:layout_width="45dp"
+                android:src="@drawable/cam_alt"
+                android:layout_height="45dp"/>
+
+            <ImageView
+                android:id="@+id/img_test_travel_dashboard_note"
+                android:layout_width="45dp"
+                android:src="@drawable/note_alt"
+                android:layout_gravity="bottom"
+                android:layout_height="45dp"/>
+
+            <ImageView
+                android:id="@+id/img_test_travel_dashboard_audio"
+                android:layout_width="45dp"
+                android:src="@drawable/mic_alt"
+                android:layout_gravity="bottom"
+                android:layout_height="45dp"/>
+            <ImageView
+                android:id="@+id/img_test_travel_dashboard_add_coll"
+                android:layout_width="45dp"
+                android:src="@drawable/coll_alt"
+                android:layout_gravity="bottom"
+                android:layout_height="45dp"/>
+
+            <ImageView
+                android:id="@+id/img_test_travel_dashboard_check_in"
+                android:layout_width="45dp"
+                android:src="@drawable/check_in_alt"
+                android:layout_gravity="bottom"
+                android:layout_height="45dp"/>
+
+            <ImageView
+                android:id="@+id/img_test_travel_dashboard_add_before"
+                android:layout_width="45dp"
+                android:src="@drawable/behind"
+                android:layout_gravity="bottom"
+                android:layout_height="45dp"/>
+
+            <ImageView
+                android:id="@+id/img_test_travel_dashboard_add_after"
+                android:layout_width="45dp"
+                android:layout_marginRight="@dimen/margin_8dp"
+                android:src="@drawable/forward"
+                android:layout_gravity="bottom"
+                android:layout_height="45dp"/>
+            </LinearLayout>
+
+    </LinearLayout>
+
+    <ListView
+        android:drawSelectorOnTop="true"
+        android:layout_marginTop="1dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:choiceMode="singleChoice"
+        android:listSelector="@color/normal_transparent_black_button_bg"
+        android:id="@+id/list_test_timeline"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_above="@+id/ll_test_trip_dashboard_bottom_add" />
+</RelativeLayout>

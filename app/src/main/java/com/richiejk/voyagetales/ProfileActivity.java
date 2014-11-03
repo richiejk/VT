@@ -13,6 +13,7 @@ import android.os.Build;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.androidquery.AQuery;
 import com.richiejk.voyagetales.common.Finals;
@@ -31,12 +32,14 @@ public class ProfileActivity extends VoyageTalesActivity {
     VoyageTalesApplication application;
     UISet ui=new UISet();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         application=(VoyageTalesApplication)getApplication();
         initUI();
+
     }
 
     @Override
@@ -62,6 +65,8 @@ public class ProfileActivity extends VoyageTalesActivity {
 
         ui.my_name=(TextView)findViewById(R.id.txt_name);
 
+
+
         ui.my_name.setText("("+application.getCurrent_user().getUser_name()+")");
         ui.name.setText(application.getCurrent_user().getUser_name());
         ui.email.setText(application.getCurrent_user().getEmail_id());
@@ -71,6 +76,8 @@ public class ProfileActivity extends VoyageTalesActivity {
         ui.fans_count.setText(ui.fans_count.getText().toString().replace("%d",0+""));
 
         AQuery aq=new AQuery(this);
-        aq.id(R.id.temp_me).image(application.getCurrent_user().getProfile_picture());
+        aq.id(R.id.img_profile_pic).image(application.getCurrent_user().getProfile_picture());
     }
+
+
 }

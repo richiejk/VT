@@ -131,21 +131,19 @@ public class LandingActivity extends VoyageTalesActivity {
             Log.i("LOG_STATUS_CODE_INITIATOR","START");
         }
 
-
-
-
         ui.progressDialog.hide();
 
-        int user_id=1;
-        CommonUtils.setCurrentUserId(this,user_id);
-        UserModel currentUser=new UserModel(user_id, "richie","richie@richie.in","http://www.unmatchedstyle.com/wp-content/uploads/2010/11/user.jpg", 0,0, 0, 0, 0);
 
-
-
-        currentUser.setFriends(new ArrayList<UserModel>());
-        application.setCurrent_user(currentUser);
+     //   int user_id=1;
         DBHandler dbHandler=new DBHandler(this);
-        dbHandler.insertUser(currentUser);
+        UserModel currentUser=new UserModel("richie",ui.username.getText().toString(),"http://www.unmatchedstyle.com/wp-content/uploads/2010/11/user.jpg", 0,0, 0, 0, 0);
+        currentUser.setFriends(new ArrayList<UserModel>());
+
+        int id=dbHandler.insertUser(currentUser);
+
+        CommonUtils.setCurrentUserId(this,id);
+        application.setCurrent_user(currentUser);
+
 
         boolean memCache = true;
         boolean fileCache = true;

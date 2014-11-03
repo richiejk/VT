@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/normal_transparent_black_button_bg"
+        android:layout_width="match_parent"
+        android:minHeight="100dp"
+        android:layout_height="100dp">
+
+
+        <ImageView
+            android:id="@+id/img_trips_list_item_bg"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blue_winter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_marginLeft="-10dp"
+            android:layout_marginRight="-10dp"
+            android:background="@drawable/blur_box_lighter"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:textStyle="bold"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:id="@+id/txt_item_trips_list_name"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left"
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:textColor="@color/text_light_gray"
+            android:text="Richie Jose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+             />
+        <TextView
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:id="@+id/txt_item_trips_list_desc"
+            android:layout_gravity="center_vertical|left"
+            android:gravity="center_vertical|left"
+            android:textSize="12sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textColor="@color/text_light_gray"
+            android:text="Richie Jose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/txt_item_trips_list_name"
+            android:layout_alignStart="@+id/txt_item_trips_list_name" />
+
+            <LinearLayout
+                android:gravity="left"
+                android:layout_gravity="left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RatingBar
+                    android:layout_marginLeft="32dp"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:isIndicator="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ratingBar_trip_item" />
+                <TextView
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="32dp"
+                    android:id="@+id/txt_item_trips_list_fans"
+                    android:layout_gravity="center_vertical|left"
+                    android:gravity="center_vertical|left"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:textColor="@color/text_light_gray"
+                    android:text="0 fans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignLeft="@+id/txt_item_trips_list_name"
+                    android:layout_alignStart="@+id/txt_item_trips_list_name" />
+                </LinearLayout>
+
+
+
+        </LinearLayout>
+        </RelativeLayout>
+
+</LinearLayout>
