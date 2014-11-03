@@ -21,4 +21,11 @@ public class Finals {
 
     public static String URL_IMG_PATH_ME = "/data/data/com.richiejk.voyagetales/me.jpg";
 
+    public static int COMPLETED_STATUS_SYNCED=1;
+    public static int COMPLETED_STATUS_UNSYNCED=2;
+    public static int INCOMPLETE_STATUS_SYNCED=0;
+    public static int INCOMPLETE_STATUS_UNSYNCED=3;
+
+    public static int POINTER_NULL=0;
+
 }
